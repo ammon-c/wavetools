@@ -1,0 +1,11 @@
+*.bak
+*.obj
+*.out
+*.pdb
+*.ilk
+*.exe
+testout_*
+TODO
+x64/
+ffmpeg/
+ffmpeg.exe
