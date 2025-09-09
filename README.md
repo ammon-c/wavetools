@@ -11,7 +11,7 @@ trimming, stretching, resampling, and adding effects to audio
 waveforms.  
 
 I wrote these tools for my own use.  You may also use them, but
-at your own risk.  Refer the [license](#tagLicense) section at
+at your own risk.  Refer to the [license](#tagLicense) section at
 the end of this document for important legal notices.  
 
 **Supported File Formats:**
