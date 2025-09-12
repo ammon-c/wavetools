@@ -55,6 +55,7 @@ Uncompressed WAV files are generally supported.
 * [WaveMix Utility](#tagWaveMix) - Mix multiple audio files into one
 * [WavePrint Utility](#tagWavePrint) - Print a text-based graph of an audio file
 * [WaveRate Utility](#tagWaveRate) - Change the sampling rate of an audio file (resample audio)
+* [WaveReverb Utility](#tagWaveReverb) - Apply a reverb effect to an audio file
 * [WaveStretch Utility](#tagWaveStretch) - Stretch or shrink (slow down or speed up) an audio file
 * [WaveTremolo Utility](#tagWaveTremolo) - Apply a tremolo effect to an audio file
 * [WaveTrim Utility](#tagWaveTrim) - Delete a portion of an audio file
@@ -593,6 +594,46 @@ Options:
 ```
 
 ---
+<a name="tagWaveReverb"></a>
+
+### WaveReverb Utility
+
+**WaveReverb** reads an existing audio file, applies a
+reverb effect to the waveform, writes the altered waveform
+to a new audio file.  
+
+```
+Usage:  wavereverb [options] dwell infile outfile
+
+Where:
+  dwell : Indicates the room size, from 0.1 to 1.0 
+
+Options:
+  -WetLevel=x : Specify how much wet signal to include in the 
+       altered waveform, as a floating-point number between 0 
+       and 1.  Default is 1.
+
+  -DryLevel=x : Specify how much dry signal to include in the 
+       altered waveform, as a floating-point number between 0 
+       and 1.  Default is 0.
+
+  -Float=x : For file formats that support both integer and 
+       floating-point samples, this indicates which to use 
+       when writing 'outfile', where 'x' may be 'yes' or 'no'. 
+
+  -BytesPerSample=x : For file formats that support multiple 
+       sample sizes, this indicates which sample size to use 
+       when writing 'outfile', where 'x' is typically 1, 2, or 
+       4 for integer samples, and 4 or 8 for floating-point 
+       samples. 
+
+  -Help : Print this usage information to the console.
+
+  -License : Print the copyright notice and software license 
+       information to the console.
+```
+
+---
 <a name="tagWaveStretch"></a>
 
 ### WaveStretch Utility
@@ -875,7 +916,7 @@ RunWaveCompareTests.bat, RunWaveConvertTests.bat,
 RunWaveExtendTests.bat, RunWaveFadeTests.bat, RunWaveGateTests.bat,
 RunWaveInfoTests.bat, RunWaveJoinTests.bat,
 RunWaveNormalizeTests.bat, RunWavePrintTests.bat,
-RunWaveRateTests.bat, RunWaveStretchTests.bat,
+RunWaveRateTests.bat, RunWaveReverbTests.bat, RunWaveStretchTests.bat,
 RunWaveTremoloTests.bat, RunWaveTrimTests.bat,
 RunWaveVolumeTests.bat, CleanTests.bat 
 
@@ -938,7 +979,6 @@ Some things I want to add to WaveTools someday:
 
   * Add tools to extract audio waveforms from video files (AVI, MP4, WMV, etc).
   * Add tools to extract audio waveforms from .mod and .s3m music files.
-  * WaveReverb?  Add a tool to generate reverberation effects in an audio file.
   * WaveClipper?  Add a tool to clip/saturate/distort an audio waveform.
   * WavePlay?  Add a command line audio player.
   * WavePlot?  Add a tool to draw a waveform to a bitmap file (.BMP/.JPG/etc).

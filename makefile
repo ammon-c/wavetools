@@ -63,6 +63,7 @@ all:  $(BINDIR) $(OBJDIR) \
         $(BINDIR)\wavenormalize.exe \
         $(BINDIR)\waveprint.exe \
         $(BINDIR)\waverate.exe \
+        $(BINDIR)\wavereverb.exe \
         $(BINDIR)\wavestretch.exe \
         $(BINDIR)\wavetremolo.exe \
         $(BINDIR)\wavetrim.exe \
@@ -149,6 +150,10 @@ $(BINDIR)\waverate.exe: $(OBJDIR)\waverate.obj \
         $(BINDIR)\waveformlib.lib
     link /NOLOGO /DEBUG $** gdi32.lib user32.lib /OUT:$@
 
+$(BINDIR)\wavereverb.exe: $(OBJDIR)\wavereverb.obj \
+        $(BINDIR)\waveformlib.lib
+    link /NOLOGO /DEBUG $** gdi32.lib user32.lib /OUT:$@
+
 $(BINDIR)\wavestretch.exe: $(OBJDIR)\wavestretch.obj \
         $(BINDIR)\waveformlib.lib
     link /NOLOGO /DEBUG $** gdi32.lib user32.lib /OUT:$@
@@ -192,6 +197,7 @@ $(OBJDIR)\wavemix.obj:         tools/wavemix.cpp             $(HDRS)
 $(OBJDIR)\wavenormalize.obj:   tools/wavenormalize.cpp       $(HDRS)
 $(OBJDIR)\waveprint.obj:       tools/waveprint.cpp           $(HDRS)
 $(OBJDIR)\waverate.obj:        tools/waverate.cpp            $(HDRS)
+$(OBJDIR)\wavereverb.obj:      tools/wavereverb.cpp          $(HDRS)
 $(OBJDIR)\wavestretch.obj:     tools/wavestretch.cpp         $(HDRS)
 $(OBJDIR)\wavetremolo.obj:     tools/wavetremolo.cpp         $(HDRS)
 $(OBJDIR)\wavetrim.obj:        tools/wavetrim.cpp            $(HDRS)
